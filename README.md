@@ -1,5 +1,8 @@
 # OpenSort Java Library
 
+Build status: [![build_status](https://travis-ci.org/Code2Bits/OpenSort.svg?branch=master)](https://travis-ci.org/Code2Bits/OpenSort)
+
+
 ## License
 
 Copyright © 2017 André Maré
