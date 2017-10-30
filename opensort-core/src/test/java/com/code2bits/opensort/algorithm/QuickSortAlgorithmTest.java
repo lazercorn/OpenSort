@@ -26,6 +26,10 @@ package com.code2bits.opensort.algorithm;
 
 import static org.junit.Assert.assertEquals;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Modifier;
+
 import org.junit.Test;
 
 import com.code2bits.opensort.utils.ArrayUtils;
@@ -37,6 +41,15 @@ import com.code2bits.opensort.utils.ArrayUtils;
  */
 public class QuickSortAlgorithmTest {
 
+	
+	@Test
+	public void testConstructorIsPrivate() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+	  Constructor<QuickSortAlgorithm> constructor = QuickSortAlgorithm.class.getDeclaredConstructor();
+	  assertEquals("Modifier is Private.", true, Modifier.isPrivate(constructor.getModifiers()));
+	  constructor.setAccessible(true);
+	  constructor.newInstance();
+	} // method testConstructorIsPrivate
+	
 	
 	@Test
 	public void testQuickSortSizeTen() {
