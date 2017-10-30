@@ -8,11 +8,17 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>opensort-core</artifactId>
-  <name>opensort-core</name>
+  <artifactId>opensort-example</artifactId>
+  <name>opensort-example</name>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <dependencies>
+    <dependency>
+      <groupId>com.code2bits.opensort</groupId>
+        <artifactId>opensort-core</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+      </dependency>    
     <dependency>
       <groupId>junit</groupId>
         <artifactId>junit</artifactId>

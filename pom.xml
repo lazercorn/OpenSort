@@ -11,7 +11,12 @@
   <url>http://github.com/Code2Bits/OpenSort</url>
   <description>OpenSort is a free Java library for sorting objects as part of a Collection or Array with an MIT open source license.</description>
 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
   <modules>
     <module>opensort-core</module>
+    <module>opensort-example</module>
   </modules>
 </project>

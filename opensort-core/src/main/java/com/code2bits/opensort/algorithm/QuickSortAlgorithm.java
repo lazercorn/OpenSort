@@ -21,32 +21,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.code2bits.opensort;
+package com.code2bits.opensort.algorithm;
 
 
 /**
- *  
+ * The QuickSortAlgorithm class implements the QuickSort algorithm for sorting an array of
+ * integers. 
  * 
- * 
- * @author	André Maré	
+ * @author	André Maré
  */
-public class Sorter {
+public final class QuickSortAlgorithm {
 
-
-	private int[] collection;
 	
-	
-	public Sorter(int[] _collection) {
-		this.collection = _collection;
+	/**
+	 * The private constructor suppresses the default constructor to prevent the instantiation of class 
+	 * (Ensuring non-instantiability.)
+	 */
+	private QuickSortAlgorithm() {
 	} // constructor
 	
 	
-	public void sort() {
-		quickSort(collection, 0, collection.length-1);
+	public static void sort(int[] _collection) {
+		quickSort(_collection, 0, _collection.length-1);
 	} // method sort
 	
 	
-	private void quickSort(int[] collection, int firstPosition, int lastPosition) {
+	private static void quickSort(int[] collection, int firstPosition, int lastPosition) {
 		if (firstPosition >= lastPosition) {
 			return;
 		} else {			
@@ -54,10 +54,10 @@ public class Sorter {
 			quickSort(collection, firstPosition, pivotIndex-1);
 			quickSort(collection, pivotIndex+1, lastPosition);
 		} // end if		
-	} // end quickSort
+	} // method quickSort
 	
 	
-	private int partition(int[] collection, int firstPosition, int lastPosition) {	
+	private static int partition(int[] collection, int firstPosition, int lastPosition) {	
 		int pivotIndex = selectPivot(firstPosition, lastPosition);
 		swap (collection, pivotIndex, lastPosition);
 		int store = firstPosition;
@@ -71,19 +71,20 @@ public class Sorter {
 		swap (collection, store, pivotIndex);
 		pivotIndex = store;
 		return pivotIndex;
-	} // end partition	
+	} // method partition	
 	
 	
-	private void swap(int[] collection, int x, int y) {
+	private static void swap(int[] collection, int x, int y) {
 		int temp = collection[x];
 		collection[x] = collection[y];
 		collection[y] = temp;
-	} // end swap
+	} // method swap
 	
 
-	private int selectPivot(int first, int last) {
+	private static int selectPivot(int first, int last) {
         int pivotPosition = (first+last)/2;
 		return pivotPosition;
-	} // end selectPivot
+	} // method selectPivot
 
-}
+	
+} // class QuickSortAlgorithm
