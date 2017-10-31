@@ -3,7 +3,7 @@ sudo: false
 install: true
 addons:
   sonarcloud:
-    organization: "Travis-Token"
+    organization: "Code2Bits"
     token:
       secure: "Th480yAB4r7x3jOznxCc5TDhY4YrTn7+h6mwmtpvH4/yeIUF5oDxKKlG+Be1PeumMzlZe7zF+ujN7FP+vuJyrSEpnoYR7oaUv09MWYyltVs9P6lNCUcdofOHCszCpEMlAYWAgxh8onhvfW/0hWfYya4nrWVA+wUdKwt413pENCbP7NucyLXxZZHEs78GtIe+tmA96bmsp0JvNU8mrgpVff8ZxRmr/pTLEOQ9bYimL6nRssEtD6M3D2cEGk/Z2uanlmw5nf/geQrpnCofcBt61TYb1csMPLCBDtRiTZg4XoNol5btXaaMzV/KuvPDHJmsPGu1ApsNbev1q6w4cjHkkfAVllGCBD7QQNwOs30FGA8yGipJeDeGE11wXOkxYxlsw2/fk7ZqJDBWv+m1N4eY06fyJV9TDkQIG5Avn94b0oqb7XWHlT5iaRRkDxl3vb4SUFk0cr/vGu0q3Zf6HiYtC9MPq0PAJWpyboZ+CdQ4b6Wx1q9Rbn8eRC3caOjQwzdhCIc+e93ka7diYgX94fgS+GhGXfQuuurqLrGtUZgM3YSKhvh0nSumP0zy2kwOyUiEV2elCy93UieAlppOkg/Iq1NUhrVXKdyen2EAEA9w/umGn9tlf8+UTsjRgDQkIsmGtZ8wXCdpDELTOIP3bnvoWoUCmX+TU6o5x3GYuvS1i2M="
 jdk:

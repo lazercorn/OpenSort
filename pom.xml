@@ -20,6 +20,12 @@
     <module>opensort-example</module>
   </modules>
 
+  <scm>
+    <connection>scm:git:git@github.com:Code2Bits/OpenSort.git</connection>
+    <developerConnection>scm:git:git@github.com:Code2Bits/OpenSort.git</developerConnection>
+    <url>https://github.com/Code2Bits/OpenSort.git</url>
+  </scm>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -29,19 +35,5 @@
     </dependency>
   </dependencies>
 
-  <build>
-    <sourceDirectory>src/main/java</sourceDirectory>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-        </configuration>
-      </plugin>
-
-  </build>
 
 </project>
