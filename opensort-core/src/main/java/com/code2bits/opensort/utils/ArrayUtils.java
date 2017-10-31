@@ -24,7 +24,6 @@
 package com.code2bits.opensort.utils;
 
 
-import java.util.Arrays;
 import java.util.Random;
 
 
@@ -32,8 +31,16 @@ import java.util.Random;
  * 
  * @author	André Maré
  */
-public final class ArrayUtils {
+public class ArrayUtils {
 
+	
+	/**
+	 * The private constructor suppresses the default constructor to prevent the instantiation of class 
+	 * (Ensuring non-instantiability.)
+	 */
+	private ArrayUtils() {
+	} // constructor
+	
 	
     public static boolean isSorted(int[] _collection) {    	
         if (_collection.length < 1) {
@@ -61,10 +68,6 @@ public final class ArrayUtils {
 	    return collection;
     } // end method
     
-    
-	public static void printArray(int[] _collection) {
-		System.out.println(Arrays.toString(_collection));
-	} // end method
     
 	
 } // end class

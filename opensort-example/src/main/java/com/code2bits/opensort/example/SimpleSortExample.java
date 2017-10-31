@@ -35,12 +35,12 @@ public class SimpleSortExample {
 		int[] arrayOfIntegers = ArrayUtils.generateArraySize(10);
 		
 		System.out.println("Is Sorted: " + ArrayUtils.isSorted(arrayOfIntegers));
-		ArrayUtils.printArray(arrayOfIntegers);
+		
 		System.out.println("Sorting ...");
 		QuickSortAlgorithm.sort(arrayOfIntegers);
 	    
 	    System.out.println("Is Sorted: " + ArrayUtils.isSorted(arrayOfIntegers));
-	    ArrayUtils.printArray(arrayOfIntegers);
+	    
 
 	    
 	}
