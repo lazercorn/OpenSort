@@ -3,14 +3,17 @@ sudo: false
 install: true
 addons:
   sonarcloud:
-    organization: "Code2Bits"
+    organization: Code2Bits
     token:
-      secure: "Th480yAB4r7x3jOznxCc5TDhY4YrTn7+h6mwmtpvH4/yeIUF5oDxKKlG+Be1PeumMzlZe7zF+ujN7FP+vuJyrSEpnoYR7oaUv09MWYyltVs9P6lNCUcdofOHCszCpEMlAYWAgxh8onhvfW/0hWfYya4nrWVA+wUdKwt413pENCbP7NucyLXxZZHEs78GtIe+tmA96bmsp0JvNU8mrgpVff8ZxRmr/pTLEOQ9bYimL6nRssEtD6M3D2cEGk/Z2uanlmw5nf/geQrpnCofcBt61TYb1csMPLCBDtRiTZg4XoNol5btXaaMzV/KuvPDHJmsPGu1ApsNbev1q6w4cjHkkfAVllGCBD7QQNwOs30FGA8yGipJeDeGE11wXOkxYxlsw2/fk7ZqJDBWv+m1N4eY06fyJV9TDkQIG5Avn94b0oqb7XWHlT5iaRRkDxl3vb4SUFk0cr/vGu0q3Zf6HiYtC9MPq0PAJWpyboZ+CdQ4b6Wx1q9Rbn8eRC3caOjQwzdhCIc+e93ka7diYgX94fgS+GhGXfQuuurqLrGtUZgM3YSKhvh0nSumP0zy2kwOyUiEV2elCy93UieAlppOkg/Iq1NUhrVXKdyen2EAEA9w/umGn9tlf8+UTsjRgDQkIsmGtZ8wXCdpDELTOIP3bnvoWoUCmX+TU6o5x3GYuvS1i2M="
+      secure: Th480yAB4r7x3jOznxCc5TDhY4YrTn7+h6mwmtpvH4/yeIUF5oDxKKlG+Be1PeumMzlZe7zF+ujN7FP+vuJyrSEpnoYR7oaUv09MWYyltVs9P6lNCUcdofOHCszCpEMlAYWAgxh8onhvfW/0hWfYya4nrWVA+wUdKwt413pENCbP7NucyLXxZZHEs78GtIe+tmA96bmsp0JvNU8mrgpVff8ZxRmr/pTLEOQ9bYimL6nRssEtD6M3D2cEGk/Z2uanlmw5nf/geQrpnCofcBt61TYb1csMPLCBDtRiTZg4XoNol5btXaaMzV/KuvPDHJmsPGu1ApsNbev1q6w4cjHkkfAVllGCBD7QQNwOs30FGA8yGipJeDeGE11wXOkxYxlsw2/fk7ZqJDBWv+m1N4eY06fyJV9TDkQIG5Avn94b0oqb7XWHlT5iaRRkDxl3vb4SUFk0cr/vGu0q3Zf6HiYtC9MPq0PAJWpyboZ+CdQ4b6Wx1q9Rbn8eRC3caOjQwzdhCIc+e93ka7diYgX94fgS+GhGXfQuuurqLrGtUZgM3YSKhvh0nSumP0zy2kwOyUiEV2elCy93UieAlppOkg/Iq1NUhrVXKdyen2EAEA9w/umGn9tlf8+UTsjRgDQkIsmGtZ8wXCdpDELTOIP3bnvoWoUCmX+TU6o5x3GYuvS1i2M=
 jdk:
-  - oraclejdk8
+- oraclejdk8
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
 cache:
   directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.sonar/cache'
+  - $HOME/.m2/repository
+  - $HOME/.sonar/cache
+env:
+  global:
+    secure: BTpyQwSQ3KcqsYklwBQGGAGqb6TW6GShD2IlY+cWqGN6V2pwwnw5v3fhAoEaKq5ntKRKk0cQ8UwYslQE0S1E035jo8Hz82eIH2j7NW2T3tjTTSk9gAc4fVZ++c8QnDFuCT0MlUAWjEc1jYQesm7UC2l2gbpEcmetXvKz+5n8o77HVi9vW/qvRHggf5j46pnh8f2oWqQ6rKAmOHOgOt6WEgS6habchl+IXV4PMYMGqOX7ozhTh/MEWRPUdt4oMu7l6E7A/rflBS86E0ilUt4qSruApcRfvJ7CO/+iAWeN0SyrLXWi6JwA+QjrLoqmV9Mg6Ul0vCJEaKOEWFdmZIBrq8iFPyRxTRGQ1/S1unDcNPxYUrn577VZj+inUryCynjDxzh84xKOesI0q0DGWT1Fe2tAciAEPjUG32eYljBjMknhW530bP7o3mCMAgGaSE2xHz9G1wMbbKhmzD/7lSFd7dkfaS//q8KxefveAFbzvo6z+gsT7HWazf4bp9MF5QlK0+laLVBOC8xGVxGtRDAtqPVzqbfFNhX10BArojHA6d5tVIA2aVVBs1mIl+kUf0xfktVg+CS1+bcQFf3WVsnqRr+JdcubJ/Z2bBTykJVbKPLx6YmT8jUXsL0aDUz5bp4kYJx7knSwJ5tHdbC83ALRwA0KP0CpOyg6u5R3FWykH4c=
