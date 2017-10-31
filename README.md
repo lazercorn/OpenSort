@@ -2,6 +2,7 @@
 
 Build status: [![build_status](https://travis-ci.org/Code2Bits/OpenSort.svg?branch=master)](https://travis-ci.org/Code2Bits/OpenSort)
 
+Quality Gate: [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=com.code2bits.opensort:multi)](https://sonarcloud.io/dashboard?id=com.code2bits.opensort%3Amulti)
 
 ## License
 
