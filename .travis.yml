@@ -3,7 +3,9 @@ sudo: false
 install: true
 addons:
   sonarcloud:
-    token: $SONAR_TOKEN
+    organization: "code2bits-github"
+    token:
+      secure: "IKj36zPZ/l17xL56CiOHCdhoCg+Sk8MSFydyFzEQ4yNiigl6NrRdrUcraPQYKvySP8q0yEgHZ9bCEanEWsmKHfxDT4OGAfvCm5VUCBv45URJBu9ivy1LQB47111PAMuZj0QO/xNSbEioAxHNtrCsksdq0wnwF97HuZAxkcSL9xv3PXguIVhUsXFHBNk33qN1BSnWSE7AkrJ4pQpuovoEg7WY3noi0QNH0QPMfSG6lTayvmRywyMvyRF4ocDUgf9qso6Wu4A/ccK8X7kHjw1ZucEYf18GTSyrnowpwqa31csL7AjRZAYWxNhrEOgppATtnKrW4aYNYHygw/1QUlpSf6YittFV3/tIIrcnlpPHEqZjX83hH0S+Y1sz5sMxMqnM0G1VIfZQL4+GhqJRig3Wd2PIjsy7ALjG4Q2htOFI6LUyEiKqk2wsHlRpojXZO3m3daYHl/ZQKadaTXHmPiR+o4zONEs211fImc0oBnei5UKoRnksS53IAN1KpWAP4xajk3h3+P+RS6ojoikQnGLA+NHkrqYAs2TfhPEHziY4LcHpID2QnSEqoKtP3GZMe0ZNLOTSSkad4Tk7zcSI8jyHFMesqKD9PVmYa+PWn/7xPYLbxvpp3y3t/YdMW98sZHNOrH4i1pBM6e2Y5kQgVnIYxAsKg4eiI1bFh6VnznGQJso="
 jdk:
   - oraclejdk8
 script:
