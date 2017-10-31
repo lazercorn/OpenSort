@@ -3,18 +3,14 @@ sudo: false
 install: true
 addons:
   sonarcloud:
-    organization: code2bits-github
+    organization: "code2bits-github"
     token:
       secure: "QrfKW0bxKgpsmJ18vQPBja3+7dm3zpnsSi1a66Aqth5RXziQ+/RJYZ7F+8vjJKOzVTZZwf8KpBZK1aahBjhxbxvzsYSvxOtQIYFdKougXeD6NRuU7VE01z9uzv9R3RSxhaMjMTmEhP9kY5cOiXQGqTQpRHm0HwyaqecMNvLT8BouHepO6EXZz52kqOyHDfw/vLz6Y71+QTEWi8f2XUa6MfwtiRxR2lUnHkJ4LtU3jICDgs6mTCyx+J9SS/UC0wV/scE7ZNHGLjlh1kfait+zBmEzrP7MbBaLMcPheRCuEMhAmcvkfTTOXSVXdK0v/XyEuEeh09nozoGboxCaIIVwhBKOnogI9dukS+7C8dYn/NDds23UOve5P+biQlLGb37Onaor8Wsm9omPs1BPs4vLYmviAYXQ5t8USVqLFj4ht3byXjRBLhMde9l8Au2z8Mb3P6aIvwb7TiVxMTBakbkcOcCeFOVESPmRzyRpDOTXY+SkjLy8dwyWre6Gp2qPQYTc2f9ya4uu2FM3Tdf1L203ZrkVB1FNmHmWoJvwITN3E4KEOjaqB7MReO6YjhcwQJf2xGr/S8Iak/yyCdpG3nyYEVkq/+uZiosuIaTw27/+cZFLtaByEQDToQ0dIIKJM2sGRFFbtvbemLZTHWdN8ZtQDpESpBug6e2nJ//FmXsmJLw="
 jdk:
-- oraclejdk8
+  - oraclejdk8
 script:
-- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
 cache:
   directories:
-  - $HOME/.m2/repository
-  - $HOME/.sonar/cache
-env:
-  global:
-  - secure: BTpyQwSQ3KcqsYklwBQGGAGqb6TW6GShD2IlY+cWqGN6V2pwwnw5v3fhAoEaKq5ntKRKk0cQ8UwYslQE0S1E035jo8Hz82eIH2j7NW2T3tjTTSk9gAc4fVZ++c8QnDFuCT0MlUAWjEc1jYQesm7UC2l2gbpEcmetXvKz+5n8o77HVi9vW/qvRHggf5j46pnh8f2oWqQ6rKAmOHOgOt6WEgS6habchl+IXV4PMYMGqOX7ozhTh/MEWRPUdt4oMu7l6E7A/rflBS86E0ilUt4qSruApcRfvJ7CO/+iAWeN0SyrLXWi6JwA+QjrLoqmV9Mg6Ul0vCJEaKOEWFdmZIBrq8iFPyRxTRGQ1/S1unDcNPxYUrn577VZj+inUryCynjDxzh84xKOesI0q0DGWT1Fe2tAciAEPjUG32eYljBjMknhW530bP7o3mCMAgGaSE2xHz9G1wMbbKhmzD/7lSFd7dkfaS//q8KxefveAFbzvo6z+gsT7HWazf4bp9MF5QlK0+laLVBOC8xGVxGtRDAtqPVzqbfFNhX10BArojHA6d5tVIA2aVVBs1mIl+kUf0xfktVg+CS1+bcQFf3WVsnqRr+JdcubJ/Z2bBTykJVbKPLx6YmT8jUXsL0aDUz5bp4kYJx7knSwJ5tHdbC83ALRwA0KP0CpOyg6u5R3FWykH4c=
-  - secure: PpoUeZZZsRq4kec7Z7hFenj7BNH4I0FGDYNm0CkFQ/t/R663zxsYd9sOkU+4ZYZdZ1KsZmxKXDljkIHkJG5H4nRga6Y+0DKB21wlXJoJXb3E/uIzTCB4tTyqFvEtpPxVZS60OTvWIaT3XmVXfnbZFSfRHrPsvotcGpaSQtlcg9uaVKidapd0jqaUukEI+XLIbTGnv9fNqOdkGpOPo48YyMwgHV8Q9Cg4cz0gqkrYhpTaMNYN4k+olUtrU4sgUQX8e8HKJBOu0Rak5UUYoKn5sgshsDv5hYGamYPXjt+oMgsGCT8gl+HSHCx7kIMOL22Fp3BKfWFmnrN+TAOAFT2zsSS6jXi3KSkMt+bKLL0JdqekSlCFjS7LiaBVH4dQxlKojXTUJ5As/hWNxqhkAAttKeJmYcEk4HDEuTVu3v3Qza6lQLY96U2zjzE1Wjf3VoWSilEq+fnDM7TEtN3+GSYmgZWje0ekOuHpxWB9zWMsq3UTlI+ZS/iX1bQPNo/r7pdVD98ydMGcO1yg5TWKPti3MYstteDiDSBqpizW5TqnDmPS2mhB2UiDpZqhP/tKEI2R74k8dB4zGM9UridBrUpjLIYgz1HYVLoz534BcZeti5LZpnW6BPBX7SwWf/1Zrq+iMtWK5T3gTuCdq+pXTy8K/mIxvIE7sr9D7drV+qZ672g=
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
