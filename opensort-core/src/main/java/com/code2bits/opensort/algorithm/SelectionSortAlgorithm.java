@@ -67,14 +67,14 @@ public final class SelectionSortAlgorithm {
 		int arrayLength = collection.length;
 		
 		for (int i=0; i < arrayLength; i++) {
-			int min_position = i;
+			int minPosition = i;
 			
 			for (int j=i+1; j<arrayLength; j++) {
-				if (collection[j] < collection[min_position]) {
-					min_position = j;					
+				if (collection[j] < collection[minPosition]) {
+					minPosition = j;					
 				}
 			}
-			swap(collection, min_position, i);
+			swap(collection, minPosition, i);
 		} 
 	} 
 	
