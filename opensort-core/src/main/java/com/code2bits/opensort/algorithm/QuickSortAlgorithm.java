@@ -53,7 +53,11 @@ public final class QuickSortAlgorithm {
 	 * QuickSort algorithm.
 	 */
 	public static void sort(int[] collection) {
-		quickSort(collection, 0, collection.length-1);
+		if (collection != null) {
+			quickSort(collection, 0, collection.length-1);
+		} else {
+			throw new IllegalArgumentException("Input paramenter for array to sort is null.");
+		}
 	} 
 	
 	

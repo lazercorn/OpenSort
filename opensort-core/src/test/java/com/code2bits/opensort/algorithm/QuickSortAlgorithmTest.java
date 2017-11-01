@@ -36,6 +36,8 @@ import com.code2bits.opensort.utils.ArrayUtils;
 
 
 /**
+ * The QuickSortAlgorithmTest class forms part of the Test Driven Development approach to test the 
+ * QuickSortAlgorithm class.
  * 
  * @author	André Maré
  */
@@ -44,18 +46,25 @@ public class QuickSortAlgorithmTest {
 	
 	@Test
 	public void testConstructorIsPrivate() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-	  Constructor<QuickSortAlgorithm> constructor = QuickSortAlgorithm.class.getDeclaredConstructor();
-	  assertEquals("Modifier is Private.", true, Modifier.isPrivate(constructor.getModifiers()));
-	  constructor.setAccessible(true);
-	  constructor.newInstance();
+		Constructor<QuickSortAlgorithm> constructor = QuickSortAlgorithm.class.getDeclaredConstructor();
+		assertEquals("Modifier is Private.", true, Modifier.isPrivate(constructor.getModifiers()));
+		constructor.setAccessible(true);
+		constructor.newInstance();
 	} // method testConstructorIsPrivate
 	
 	
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testQuickSortNull() {
 		int[] unsortedArray = null;
-		
+		QuickSortAlgorithm.sort(unsortedArray);
 	} // method testQuickSortNull
+
+	
+	@Test
+	public void testQuickSortSizeOne() {
+		int[] unsortedArray = ArrayUtils.generateArraySize(1);
+		assertSortedArray(unsortedArray);
+	} // method testQuickSortSizeOne
 	
 	
 	@Test

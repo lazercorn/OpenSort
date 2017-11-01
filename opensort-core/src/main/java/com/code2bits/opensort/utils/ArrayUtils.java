@@ -39,35 +39,34 @@ public class ArrayUtils {
 	 * (Ensuring non-instantiability.)
 	 */
 	private ArrayUtils() {
-	} // constructor
+	} 
 	
 	
-    public static boolean isSorted(int[] _collection) {    	
-        if (_collection.length < 1) {
+    public static boolean isSorted(int[] collection) {    	
+        if (collection.length < 1) {
             return false;
         }
-        int previous = _collection[0];        
-        for (int i = 1; i < _collection.length; i++) {
-            int current = _collection[i];            
+        int previous = collection[0];        
+        for (int i = 1; i < collection.length; i++) {
+            int current = collection[i];            
             if (previous > current) {
                 return false;
             }
             previous = current;
         }
         return true;
-    } // end method
+    }
     
     
-    public static int[] generateArraySize(int _arrayLength) {
+    public static int[] generateArraySize(int arrayLength) {
 	    Random random = new Random();
-	    int [] collection = new int [_arrayLength];
+	    int [] collection = new int [arrayLength];
 	    
-	    for (int i=0; i< _arrayLength ;i++){
-	    	collection[i] = random.nextInt(_arrayLength);
+	    for (int i=0; i< arrayLength ;i++){
+	    	collection[i] = random.nextInt(arrayLength);
 	    }
 	    return collection;
-    } // end method
-    
+    }
     
 	
-} // end class
+}
