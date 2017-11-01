@@ -52,6 +52,13 @@ public class QuickSortAlgorithmTest {
 	
 	
 	@Test
+	public void testQuickSortNull() {
+		int[] unsortedArray = null;
+		
+	} // method testQuickSortNull
+	
+	
+	@Test
 	public void testQuickSortSizeTen() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(10);
 		assertSortedArray(unsortedArray);
