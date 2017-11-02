@@ -24,6 +24,7 @@
 package com.code2bits.opensort.utils;
 
 
+import java.util.Arrays;
 import java.util.Random;
 
 
@@ -46,15 +47,17 @@ public class ArrayUtils {
         if (collection.length < 1) {
             return false;
         }
-        int previous = collection[0];        
-        for (int i = 1; i < collection.length; i++) {
-            int current = collection[i];            
-            if (previous > current) {
-                return false;
-            }
-            previous = current;
+
+        int[] copiedArray = new int[collection.length];
+         
+        System.arraycopy(collection, 0, copiedArray, 0, collection.length);
+        Arrays.sort(copiedArray);
+        
+        if (Arrays.equals(collection, copiedArray)) {
+        		return true;	
+        } else {
+        		return false;
         }
-        return true;
     }
     
     
