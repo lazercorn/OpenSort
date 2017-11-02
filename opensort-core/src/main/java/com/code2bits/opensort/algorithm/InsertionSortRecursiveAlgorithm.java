@@ -71,20 +71,20 @@ public class InsertionSortRecursiveAlgorithm {
 
 	
 	private static void insertionSort(int[] collection, int recursiveValue) {
-        if (recursiveValue <= 1) {
-        		return;
-        }
+		if (recursiveValue <= 1) {
+			return;
+		}
         
-        insertionSort( collection, recursiveValue - 1);
+		insertionSort( collection, recursiveValue - 1);
 
-        int last = collection[recursiveValue-1];
-        int j = recursiveValue-2;
+		int last = collection[recursiveValue-1];
+		int j = recursiveValue-2;
       
-        while (j >= 0 && collection[j] > last) {
-        		collection[j+1] = collection[j];
-            j--;
-        }
-        collection[j+1] = last;
+		while (j >= 0 && collection[j] > last) {
+			collection[j+1] = collection[j];
+			j--;
+		}
+		collection[j+1] = last;
 	}
 
 	
