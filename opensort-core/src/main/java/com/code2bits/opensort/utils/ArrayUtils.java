@@ -53,11 +53,7 @@ public class ArrayUtils {
         System.arraycopy(collection, 0, copiedArray, 0, collection.length);
         Arrays.sort(copiedArray);
         
-        if (Arrays.equals(collection, copiedArray)) {
-        		return true;	
-        } else {
-        		return false;
-        }
+        return Arrays.equals(collection, copiedArray);
     }
     
     
