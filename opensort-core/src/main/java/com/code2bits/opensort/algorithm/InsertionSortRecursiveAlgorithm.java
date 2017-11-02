@@ -72,11 +72,21 @@ public class InsertionSortRecursiveAlgorithm {
 	}
 
 	
-	/**
-	 * The recursive algorithm use the value of the second element in the array and compares it to elements
-	 */
 	private static void insertionSort(int[] collection, int recursiveValue) {
+        if (recursiveValue <= 1) {
+        		return;
+        }
+        
+        insertionSort( collection, recursiveValue - 1);
 
+        int last = collection[recursiveValue-1];
+        int j = recursiveValue-2;
+      
+        while (j >= 0 && collection[j] > last) {
+        		collection[j+1] = collection[j];
+            j--;
+        }
+        collection[j+1] = last;
 	}
 	
 	
