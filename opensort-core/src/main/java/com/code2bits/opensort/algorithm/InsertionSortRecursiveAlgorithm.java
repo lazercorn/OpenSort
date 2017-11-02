@@ -23,8 +23,6 @@
  */
 package com.code2bits.opensort.algorithm;
 
-import com.code2bits.opensort.utils.ArrayUtils;
-
 /**
  * The InsertionSortRecursiveAlgorithm class implements the InsertionSort algorithm for sorting an array of 
  * integers by making use of recursion.
@@ -88,11 +86,6 @@ public class InsertionSortRecursiveAlgorithm {
         }
         collection[j+1] = last;
 	}
-	
-	
-	public static void main(String[] args) {
-		int[] unsortedArray = ArrayUtils.generateArraySize(10);
-		insertionSort(unsortedArray);
-	}
+
 	
 }
