@@ -24,6 +24,9 @@
 package com.code2bits.opensort.algorithm;
 
 
+import com.code2bits.opensort.Sort;
+
+
 /**
  * The BubbleSortAlgorithm class implements the Bubblesort algorithm for sorting an array of integers. 
  *  
@@ -33,14 +36,13 @@ package com.code2bits.opensort.algorithm;
  * 
  * @author	André Maré
  */
-public class BubbleSortAlgorithm {
+public final class BubbleSortAlgorithm implements Sort {
 
 	
 	/**
-	 * The private constructor suppresses the default constructor to prevent the instantiation of class 
-	 * (Ensuring non-instantiability.)
+	 * The no-arg constructor used to instantiate the class.
 	 */
-	private BubbleSortAlgorithm() {
+	public BubbleSortAlgorithm() {
 	} 
 	
 	
@@ -48,7 +50,7 @@ public class BubbleSortAlgorithm {
 	 * The sort method is invoked by external classes to sort an array of integers by making use of the 
 	 * BubbleSort algorithm.
 	 */
-	public static void sort(int[] collection) {
+	public void sort(int[] collection) {
 		if (collection != null) {
 			bubbleSort(collection);
 		} else {
@@ -60,7 +62,7 @@ public class BubbleSortAlgorithm {
 	 * The Bubble Sort algorithm repeatedly steps through the list and compare each adjacent item. The pair 
 	 * of values gets swapped if they are in the wrong order.
 	 */
-	private static void bubbleSort(int[] collection) {
+	private void bubbleSort(int[] collection) {
         int n = collection.length;
         for (int i = 0; i < n-1; i++) {
             for (int j = 0; j < n-i-1; j++) {
@@ -75,7 +77,7 @@ public class BubbleSortAlgorithm {
     	/**
     	 * The method swaps two values around within an array based on the two input parameters x and y.
     	 */
-    	private static void swap(int[] collection, int x, int y) {
+    	private void swap(int[] collection, int x, int y) {
     		int temp = collection[x];
     		collection[x] = collection[y];
     		collection[y] = temp;

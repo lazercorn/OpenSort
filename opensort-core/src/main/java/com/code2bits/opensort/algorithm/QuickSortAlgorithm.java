@@ -24,6 +24,9 @@
 package com.code2bits.opensort.algorithm;
 
 
+import com.code2bits.opensort.Sort;
+
+
 /**
  * The QuickSortAlgorithm class implements the QuickSort algorithm for sorting an array of integers. 
  * QuickSort, also known as partition-exchange sort, is an efficient divide and conquer sorting algorithm. 
@@ -37,14 +40,13 @@ package com.code2bits.opensort.algorithm;
  * 
  * @author	André Maré
  */
-public final class QuickSortAlgorithm {
+public final class QuickSortAlgorithm implements Sort {
 
 	
 	/**
-	 * The private constructor suppresses the default constructor to prevent the instantiation of class 
-	 * (Ensuring non-instantiability.)
+	 * The no-arg constructor used to instantiate the class.
 	 */
-	private QuickSortAlgorithm() {
+	public QuickSortAlgorithm() {
 	} 
 	
 	
@@ -52,7 +54,7 @@ public final class QuickSortAlgorithm {
 	 * The sort method is invoked by external classes to sort an array of integers by making use of the 
 	 * QuickSort algorithm.
 	 */
-	public static void sort(int[] collection) {
+	public void sort(int[] collection) {
 		if (collection != null) {
 			quickSort(collection, 0, collection.length-1);
 		} else {
@@ -66,7 +68,7 @@ public final class QuickSortAlgorithm {
 	 * pivot until the first and last position of the sub-array is the same. This means that once a sub-array 
 	 * consist of a single element, the recursion will end.
 	 */
-	private static void quickSort(int[] collection, int firstPosition, int lastPosition) {
+	private void quickSort(int[] collection, int firstPosition, int lastPosition) {
 		if (firstPosition >= lastPosition) {
 			return;
 		} else {			
@@ -83,7 +85,7 @@ public final class QuickSortAlgorithm {
 	 * larger than the pivot is to the right of the pivot position. The sub-arrays to the left and right of
 	 * pivot position may not be sorted.
 	 */
-	private static int partition(int[] collection, int firstPosition, int lastPosition) {	
+	private int partition(int[] collection, int firstPosition, int lastPosition) {	
 		int pivotIndex = selectPivot(firstPosition, lastPosition);
 		swap (collection, pivotIndex, lastPosition);
 		int store = firstPosition;
@@ -103,7 +105,7 @@ public final class QuickSortAlgorithm {
 	/**
 	 * The method swaps two values around within an array based on the two input parameters x and y.
 	 */
-	private static void swap(int[] collection, int x, int y) {
+	private void swap(int[] collection, int x, int y) {
 		int temp = collection[x];
 		collection[x] = collection[y];
 		collection[y] = temp;
@@ -113,7 +115,7 @@ public final class QuickSortAlgorithm {
 	/**
 	 * This method performs the pivot selection. 
 	 */
-	private static int selectPivot(int first, int last) {
+	private int selectPivot(int first, int last) {
 		return (first+last)/2;
 	} 
 

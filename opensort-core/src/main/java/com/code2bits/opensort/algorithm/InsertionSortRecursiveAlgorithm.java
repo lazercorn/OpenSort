@@ -23,6 +23,10 @@
  */
 package com.code2bits.opensort.algorithm;
 
+
+import com.code2bits.opensort.Sort;
+
+
 /**
  * The InsertionSortRecursiveAlgorithm class implements the InsertionSort algorithm for sorting an array of 
  * integers by making use of recursion.
@@ -34,14 +38,13 @@ package com.code2bits.opensort.algorithm;
  * 
  * @author	André Maré
  */
-public class InsertionSortRecursiveAlgorithm {
+public final class InsertionSortRecursiveAlgorithm implements Sort {
 
 	
 	/**
-	 * The private constructor suppresses the default constructor to prevent the instantiation of class 
-	 * (Ensuring non-instantiability.)
+	 * The no-arg constructor used to instantiate the class.
 	 */
-	private InsertionSortRecursiveAlgorithm() {
+	public InsertionSortRecursiveAlgorithm() {
 	} 
 	
 	
@@ -49,7 +52,7 @@ public class InsertionSortRecursiveAlgorithm {
 	 * The sort method is invoked by external classes to sort an array of integers by making use of the 
 	 * InsertionSort algorithm.
 	 */
-	public static void sort(int[] collection) {
+	public void sort(int[] collection) {
 		if (collection != null) {
 			insertionSort(collection);
 		} else {
@@ -64,13 +67,13 @@ public class InsertionSortRecursiveAlgorithm {
 	 * sorted part of the list, and inserts it there.  This process is repeated until the whole list is 
 	 * sorted.
 	 */
-	private static void insertionSort(int[] collection) {
+	private void insertionSort(int[] collection) {
 		int arrayLength = collection.length;
 		insertionSort(collection, arrayLength);
 	}
 
 	
-	private static void insertionSort(int[] collection, int recursiveValue) {
+	private void insertionSort(int[] collection, int recursiveValue) {
 		if (recursiveValue <= 1) {
 			return;
 		}

@@ -26,10 +26,6 @@ package com.code2bits.opensort.algorithm;
 
 import static org.junit.Assert.assertEquals;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Modifier;
-
 import org.junit.Test;
 
 import com.code2bits.opensort.utils.ArrayUtils;
@@ -41,22 +37,13 @@ import com.code2bits.opensort.utils.ArrayUtils;
  * 
  * @author	André Maré
  */
-public class BubbleSortAlgorithmTest {
-
-	
-	@Test
-	public void testConstructorIsPrivate() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-		Constructor<BubbleSortAlgorithm> constructor = BubbleSortAlgorithm.class.getDeclaredConstructor();
-		assertEquals("Modifier is Private.", true, Modifier.isPrivate(constructor.getModifiers()));
-		constructor.setAccessible(true);
-		constructor.newInstance();
-	} 
+public class BubbleSortAlgorithmTest { 
 	
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testBubbleSortNull() {
 		int[] unsortedArray = null;
-		BubbleSortAlgorithm.sort(unsortedArray);
+		new BubbleSortAlgorithm().sort(unsortedArray);
 	} 
 
 	
@@ -103,7 +90,7 @@ public class BubbleSortAlgorithmTest {
 
 
 	private void assertSortedArray(int[] unsortedArray) {			
-		BubbleSortAlgorithm.sort(unsortedArray);
+		new BubbleSortAlgorithm().sort(unsortedArray);
 		assertEquals("Array is Sorted.", true, ArrayUtils.isSorted(unsortedArray));
 	} 
 	

@@ -24,6 +24,9 @@
 package com.code2bits.opensort.algorithm;
 
 
+import com.code2bits.opensort.Sort;
+
+
 /**
  * The SelectionSortAlgorithm class implements the Selection algorithm for sorting an array of integers. 
  * 
@@ -35,14 +38,13 @@ package com.code2bits.opensort.algorithm;
  * 
  * @author	André Maré
  */
-public final class SelectionSortAlgorithm {
+public final class SelectionSortAlgorithm implements Sort {
 
 	
 	/**
-	 * The private constructor suppresses the default constructor to prevent the instantiation of class 
-	 * (Ensuring non-instantiability.)
+	 * The no-arg constructor used to instantiate the class.
 	 */
-	private SelectionSortAlgorithm() {
+	public SelectionSortAlgorithm() {
 	} 
 	
 	
@@ -50,7 +52,7 @@ public final class SelectionSortAlgorithm {
 	 * The sort method is invoked by external classes to sort an array of integers by making use of the 
 	 * SelectionSort algorithm.
 	 */
-	public static void sort(int[] collection) {
+	public void sort(int[] collection) {
 		if (collection != null) {
 			selectionSort(collection);
 		} else {
@@ -63,7 +65,7 @@ public final class SelectionSortAlgorithm {
 	 * The method implements the selection sorting algorithm which is all about locating the smallest value 
 	 * from the unsorted part of the array and places it at the position indicated by the iterator.
 	 */
-	private static void selectionSort(int[] collection) {
+	private void selectionSort(int[] collection) {
 		int arrayLength = collection.length;
 		
 		for (int i=0; i < arrayLength; i++) {
@@ -82,7 +84,7 @@ public final class SelectionSortAlgorithm {
 	/**
 	 * The method swaps two values around within an array based on the two input parameters x and y.
 	 */
-	private static void swap(int[] collection, int x, int y) {
+	private void swap(int[] collection, int x, int y) {
 		int temp = collection[x];
 		collection[x] = collection[y];
 		collection[y] = temp;

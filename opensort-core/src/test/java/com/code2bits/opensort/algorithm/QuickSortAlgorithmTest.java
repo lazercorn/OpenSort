@@ -26,10 +26,6 @@ package com.code2bits.opensort.algorithm;
 
 import static org.junit.Assert.assertEquals;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Modifier;
-
 import org.junit.Test;
 
 import com.code2bits.opensort.utils.ArrayUtils;
@@ -42,69 +38,60 @@ import com.code2bits.opensort.utils.ArrayUtils;
  * @author	André Maré
  */
 public class QuickSortAlgorithmTest {
-
-	
-	@Test
-	public void testConstructorIsPrivate() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-		Constructor<QuickSortAlgorithm> constructor = QuickSortAlgorithm.class.getDeclaredConstructor();
-		assertEquals("Modifier is Private.", true, Modifier.isPrivate(constructor.getModifiers()));
-		constructor.setAccessible(true);
-		constructor.newInstance();
-	} // method testConstructorIsPrivate
 	
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testQuickSortNull() {
 		int[] unsortedArray = null;
-		QuickSortAlgorithm.sort(unsortedArray);
-	} // method testQuickSortNull
+		new QuickSortAlgorithm().sort(unsortedArray);
+	} 
 
 	
 	@Test
 	public void testQuickSortSizeOne() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(1);
 		assertSortedArray(unsortedArray);
-	} // method testQuickSortSizeOne
+	} 
 	
 	
 	@Test
 	public void testQuickSortSizeTen() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(10);
 		assertSortedArray(unsortedArray);
-	} // method testQuickSortSizeTen
+	} 
 
 	
 	@Test
 	public void testQuickSortSizeTwenty() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(20);
 		assertSortedArray(unsortedArray);
-	} // method testQuickSortSizeTwenty
+	} 
 	
 	
 	@Test
 	public void testQuickSortSizeFifty() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(50);
 		assertSortedArray(unsortedArray);
-	} // method testQuickSortSizeFifty
+	} 
 	
 	
 	@Test
 	public void testQuickSortSizeHundred() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(100);
 		assertSortedArray(unsortedArray);
-	} // method testQuickSortSizeHundred
+	} 
 	
 	
 	@Test
 	public void testQuickSortSizeThousand() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(1000);
 		assertSortedArray(unsortedArray);
-	} // method testQuickSortSizeThousand
+	} 
 
 
 	private void assertSortedArray(int[] unsortedArray) {			
-		QuickSortAlgorithm.sort(unsortedArray);
+		new QuickSortAlgorithm().sort(unsortedArray);
 		assertEquals("Array is Sorted.", true, ArrayUtils.isSorted(unsortedArray));
-	} // method assertSortedArray 
+	}  
 	
 }

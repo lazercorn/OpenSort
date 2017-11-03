@@ -23,15 +23,13 @@
  */
 package com.code2bits.opensort.algorithm;
 
-import static org.junit.Assert.assertEquals;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Modifier;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import com.code2bits.opensort.utils.ArrayUtils;
+
 
 /**
  * The InsertionSortAlgorithmTest class forms part of the Test Driven Development approach to test the 
@@ -40,21 +38,12 @@ import com.code2bits.opensort.utils.ArrayUtils;
  * @author	André Maré
  */
 public class InsertionSortAlgorithmTest {
-
-	
-	@Test
-	public void testConstructorIsPrivate() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-		Constructor<InsertionSortAlgorithm> constructor = InsertionSortAlgorithm.class.getDeclaredConstructor();
-		assertEquals("Modifier is Private.", true, Modifier.isPrivate(constructor.getModifiers()));
-		constructor.setAccessible(true);
-		constructor.newInstance();
-	} 
 	
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testInsertionSortRecursiveNull() {
 		int[] unsortedArray = null;
-		InsertionSortAlgorithm.sort(unsortedArray);
+		new InsertionSortAlgorithm().sort(unsortedArray);
 	} 
 
 	
@@ -101,7 +90,7 @@ public class InsertionSortAlgorithmTest {
 
 
 	private void assertSortedArray(int[] unsortedArray) {			
-		InsertionSortAlgorithm.sort(unsortedArray);
+		new InsertionSortAlgorithm().sort(unsortedArray);
 		assertEquals("Array is Sorted.", true, ArrayUtils.isSorted(unsortedArray));
 	} 
 	
