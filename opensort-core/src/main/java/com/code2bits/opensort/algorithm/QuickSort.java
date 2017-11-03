@@ -28,7 +28,7 @@ import com.code2bits.opensort.Sort;
 
 
 /**
- * The QuickSortAlgorithm class implements the QuickSort algorithm for sorting an array of integers. 
+ * The QuickSort class implements the QuickSort algorithm for sorting an array of integers. 
  * QuickSort, also known as partition-exchange sort, is an efficient divide and conquer sorting algorithm. 
  * 
  * The algorithm divides the array into two smaller sub-arrays. To divide the algorithm into two array, an 
@@ -40,13 +40,13 @@ import com.code2bits.opensort.Sort;
  * 
  * @author	André Maré
  */
-public final class QuickSortAlgorithm implements Sort {
+public final class QuickSort implements Sort {
 
 	
 	/**
 	 * The no-arg constructor used to instantiate the class.
 	 */
-	public QuickSortAlgorithm() {
+	public QuickSort() {
 	} 
 	
 	

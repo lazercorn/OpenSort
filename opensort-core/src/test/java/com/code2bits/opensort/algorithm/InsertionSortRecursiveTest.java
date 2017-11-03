@@ -32,18 +32,18 @@ import com.code2bits.opensort.utils.ArrayUtils;
 
 
 /**
- * The InsertionSortRecursiveAlgorithmTest class forms part of the Test Driven Development approach to test the 
+ * The InsertionSortRecursiveTest class forms part of the Test Driven Development approach to test the 
  * InsertionSortRecursiveAlgorithm class.
  * 
  * @author	André Maré
  */
-public class InsertionSortRecursiveAlgorithmTest {
+public class InsertionSortRecursiveTest {
 	
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testInsertionSortRecursiveNull() {
 		int[] unsortedArray = null;
-		new InsertionSortRecursiveAlgorithm().sort(unsortedArray);
+		new InsertionSortRecursive().sort(unsortedArray);
 	} 
 
 	
@@ -90,7 +90,7 @@ public class InsertionSortRecursiveAlgorithmTest {
 
 
 	private void assertSortedArray(int[] unsortedArray) {			
-		new InsertionSortRecursiveAlgorithm().sort(unsortedArray);
+		new InsertionSortRecursive().sort(unsortedArray);
 		assertEquals("Array is Sorted.", true, ArrayUtils.isSorted(unsortedArray));
 	} 
 	

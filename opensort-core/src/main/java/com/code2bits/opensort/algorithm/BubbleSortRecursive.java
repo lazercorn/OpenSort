@@ -28,7 +28,7 @@ import com.code2bits.opensort.Sort;
 
 
 /**
- * The BubbleSortAlgorithm class implements the Bubblesort algorithm for sorting an array of integers. 
+ * The BubbleSort class implements the Bubblesort algorithm for sorting an array of integers. 
  *  
  * The Bubble Sort algorithm repeatedly steps through the list and compare each adjacent item. The pair 
  * of values gets swapped if they are in the wrong order. The algorithm gets its name from the way smaller 
@@ -38,13 +38,13 @@ import com.code2bits.opensort.Sort;
  * 
  * @author	André Maré
  */
-public final class BubbleSortRecursiveAlgorithm implements Sort {
+public final class BubbleSortRecursive implements Sort {
 
 	
 	/**
 	 * The no-arg constructor used to instantiate the class.
 	 */
-	public BubbleSortRecursiveAlgorithm() {
+	public BubbleSortRecursive() {
 	} 
 	
 	

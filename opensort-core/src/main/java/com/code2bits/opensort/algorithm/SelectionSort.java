@@ -28,60 +28,66 @@ import com.code2bits.opensort.Sort;
 
 
 /**
- * The BubbleSortAlgorithm class implements the Bubblesort algorithm for sorting an array of integers. 
- *  
- * The Bubble Sort algorithm repeatedly steps through the list and compare each adjacent item. The pair 
- * of values gets swapped if they are in the wrong order. The algorithm gets its name from the way smaller 
- * or larger elements "bubble" to the top of the list.
+ * The SelectionSort class implements the Selection algorithm for sorting an array of integers. 
+ * 
+ * The algorithm divides the input list into two parts. The first sublist is built up from left to right and 
+ * contains items that are already sorted. The second sublist contains the items to be sorted. Initially, the
+ * sorted sublist is empty and the unsorted sublist is the entire input list.  The algorithm starts by 
+ * finding the smallest element in the unsorted sublist, swapping it with the leftmost unsorted element. This
+ * places the element in a sorted position, and moving the sublist boundaries one element to the right.
  * 
  * @author	André Maré
  */
-public final class BubbleSortAlgorithm implements Sort {
+public final class SelectionSort implements Sort {
 
 	
 	/**
 	 * The no-arg constructor used to instantiate the class.
 	 */
-	public BubbleSortAlgorithm() {
+	public SelectionSort() {
 	} 
 	
 	
 	/**
 	 * The sort method is invoked by external classes to sort an array of integers by making use of the 
-	 * BubbleSort algorithm.
+	 * SelectionSort algorithm.
 	 */
 	public void sort(int[] collection) {
 		if (collection != null) {
-			bubbleSort(collection);
+			selectionSort(collection);
 		} else {
 			throw new IllegalArgumentException("Input paramenter for array to sort is null.");
 		}
-	} 
+	}
+	
 	
 	/**
-	 * The Bubble Sort algorithm repeatedly steps through the list and compare each adjacent item. The pair 
-	 * of values gets swapped if they are in the wrong order.
+	 * The method implements the selection sorting algorithm which is all about locating the smallest value 
+	 * from the unsorted part of the array and places it at the position indicated by the iterator.
 	 */
-	private void bubbleSort(int[] collection) {
-        int n = collection.length;
-        for (int i = 0; i < n-1; i++) {
-            for (int j = 0; j < n-i-1; j++) {
-                if (collection[j] > collection[j+1]) {
-                		swap(collection, j, j+1);
-                }
-            }
-        }
-	}
-        
-        
-    	/**
-    	 * The method swaps two values around within an array based on the two input parameters x and y.
-    	 */
-    	private void swap(int[] collection, int x, int y) {
-    		int temp = collection[x];
-    		collection[x] = collection[y];
-    		collection[y] = temp;
-    	}
-
-    	
+	private void selectionSort(int[] collection) {
+		int arrayLength = collection.length;
+		
+		for (int i=0; i < arrayLength; i++) {
+			int minPosition = i;
+			
+			for (int j=i+1; j<arrayLength; j++) {
+				if (collection[j] < collection[minPosition]) {
+					minPosition = j;					
+				}
+			}
+			swap(collection, minPosition, i);
+		} 
+	} 
+	
+	
+	/**
+	 * The method swaps two values around within an array based on the two input parameters x and y.
+	 */
+	private void swap(int[] collection, int x, int y) {
+		int temp = collection[x];
+		collection[x] = collection[y];
+		collection[y] = temp;
+	} 
+	
 }

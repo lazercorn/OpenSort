@@ -28,66 +28,67 @@ import com.code2bits.opensort.Sort;
 
 
 /**
- * The SelectionSortAlgorithm class implements the Selection algorithm for sorting an array of integers. 
+ * The InsertionSortRecursive class implements the InsertionSort algorithm for sorting an array of 
+ * integers by making use of recursion.
  * 
- * The algorithm divides the input list into two parts. The first sublist is built up from left to right and 
- * contains items that are already sorted. The second sublist contains the items to be sorted. Initially, the
- * sorted sublist is empty and the unsorted sublist is the entire input list.  The algorithm starts by 
- * finding the smallest element in the unsorted sublist, swapping it with the leftmost unsorted element. This
- * places the element in a sorted position, and moving the sublist boundaries one element to the right.
+ * Insertion sort is a sorting algorithm that builds the final sorted array (or list) one item at a time. 
+ * The algorithm iterates over the list and removes the current element, finds the location within the 
+ * sorted part of the list, and inserts it there.  This process is repeated until the whole list is 
+ * sorted.
  * 
  * @author	André Maré
  */
-public final class SelectionSortAlgorithm implements Sort {
+public final class InsertionSortRecursive implements Sort {
 
 	
 	/**
 	 * The no-arg constructor used to instantiate the class.
 	 */
-	public SelectionSortAlgorithm() {
+	public InsertionSortRecursive() {
 	} 
 	
 	
 	/**
 	 * The sort method is invoked by external classes to sort an array of integers by making use of the 
-	 * SelectionSort algorithm.
+	 * InsertionSort algorithm.
 	 */
 	public void sort(int[] collection) {
 		if (collection != null) {
-			selectionSort(collection);
+			insertionSort(collection);
 		} else {
 			throw new IllegalArgumentException("Input paramenter for array to sort is null.");
 		}
-	}
+	} 
 	
 	
 	/**
-	 * The method implements the selection sorting algorithm which is all about locating the smallest value 
-	 * from the unsorted part of the array and places it at the position indicated by the iterator.
+	 * Insertion sort is a sorting algorithm that builds the final sorted array (or list) one item at a time. 
+	 * The algorithm iterates over the list and removes the current element, finds the location within the 
+	 * sorted part of the list, and inserts it there.  This process is repeated until the whole list is 
+	 * sorted.
 	 */
-	private void selectionSort(int[] collection) {
+	private void insertionSort(int[] collection) {
 		int arrayLength = collection.length;
-		
-		for (int i=0; i < arrayLength; i++) {
-			int minPosition = i;
-			
-			for (int j=i+1; j<arrayLength; j++) {
-				if (collection[j] < collection[minPosition]) {
-					minPosition = j;					
-				}
-			}
-			swap(collection, minPosition, i);
-		} 
-	} 
+		insertionSort(collection, arrayLength);
+	}
+
 	
-	
-	/**
-	 * The method swaps two values around within an array based on the two input parameters x and y.
-	 */
-	private void swap(int[] collection, int x, int y) {
-		int temp = collection[x];
-		collection[x] = collection[y];
-		collection[y] = temp;
-	} 
+	private void insertionSort(int[] collection, int recursiveValue) {
+		if (recursiveValue <= 1) {
+			return;
+		}
+        
+		insertionSort( collection, recursiveValue - 1);
+
+		int last = collection[recursiveValue-1];
+		int j = recursiveValue-2;
+      
+		while (j >= 0 && collection[j] > last) {
+			collection[j+1] = collection[j];
+			j--;
+		}
+		collection[j+1] = last;
+	}
+
 	
 }

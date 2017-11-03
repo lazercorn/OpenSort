@@ -24,12 +24,12 @@
 package com.code2bits.opensort;
 
 
-import com.code2bits.opensort.algorithm.BubbleSortAlgorithm;
-import com.code2bits.opensort.algorithm.BubbleSortRecursiveAlgorithm;
-import com.code2bits.opensort.algorithm.InsertionSortAlgorithm;
-import com.code2bits.opensort.algorithm.InsertionSortRecursiveAlgorithm;
-import com.code2bits.opensort.algorithm.QuickSortAlgorithm;
-import com.code2bits.opensort.algorithm.SelectionSortAlgorithm;
+import com.code2bits.opensort.algorithm.BubbleSort;
+import com.code2bits.opensort.algorithm.BubbleSortRecursive;
+import com.code2bits.opensort.algorithm.InsertionSort;
+import com.code2bits.opensort.algorithm.InsertionSortRecursive;
+import com.code2bits.opensort.algorithm.QuickSort;
+import com.code2bits.opensort.algorithm.SelectionSort;
 
 
 /**
@@ -46,6 +46,7 @@ public final class SortFactory {
 	public static final int QUICK_SORT = 4;
 	public static final int SELECTION_SORT = 5;
 	
+	
 	/**
 	 * The private constructor suppresses the default constructor to prevent the instantiation of class 
 	 * (Ensuring non-instantiability.)
@@ -56,13 +57,13 @@ public final class SortFactory {
 	
 	public static Sort getSorter(int sortAlgorithm) {
 		switch(sortAlgorithm) {
-			case BUBBLE_SORT: return new BubbleSortAlgorithm();
-			case BUBBLE_SORT_RECURSIVE: return new BubbleSortRecursiveAlgorithm();
-			case INSERTION_SORT: return new InsertionSortAlgorithm();
-			case INSERTION_SORT_RECURSIVE: return new InsertionSortRecursiveAlgorithm();
-			case QUICK_SORT: return new QuickSortAlgorithm();
-			case SELECTION_SORT: return new SelectionSortAlgorithm();
-			default: return new QuickSortAlgorithm();
+			case BUBBLE_SORT: return new BubbleSort();
+			case BUBBLE_SORT_RECURSIVE: return new BubbleSortRecursive();
+			case INSERTION_SORT: return new InsertionSort();
+			case INSERTION_SORT_RECURSIVE: return new InsertionSortRecursive();
+			case QUICK_SORT: return new QuickSort();
+			case SELECTION_SORT: return new SelectionSort();
+			default: return new QuickSort();
 		}
 	}
 	

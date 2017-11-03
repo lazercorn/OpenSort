@@ -28,58 +28,60 @@ import com.code2bits.opensort.Sort;
 
 
 /**
- * The InsertionSortAlgorithm class implements the InsertionSort algorithm for sorting an array of integers.  
- * 
- * Insertion sort is a sorting algorithm that builds the final sorted array (or list) one item at a time. 
- * The algorithm iterates over the list and removes the current element, finds the location within the 
- * sorted part of the list, and inserts it there.  This process is repeated until the whole list is 
- * sorted.
+ * The BubbleSort class implements the Bubblesort algorithm for sorting an array of integers. 
+ *  
+ * The Bubble Sort algorithm repeatedly steps through the list and compare each adjacent item. The pair 
+ * of values gets swapped if they are in the wrong order. The algorithm gets its name from the way smaller 
+ * or larger elements "bubble" to the top of the list.
  * 
  * @author	André Maré
  */
-public final class InsertionSortAlgorithm implements Sort {
+public final class BubbleSort implements Sort {
 
 	
 	/**
 	 * The no-arg constructor used to instantiate the class.
 	 */
-	public InsertionSortAlgorithm() {
+	public BubbleSort() {
 	} 
 	
 	
 	/**
 	 * The sort method is invoked by external classes to sort an array of integers by making use of the 
-	 * InsertionSort algorithm.
+	 * BubbleSort algorithm.
 	 */
 	public void sort(int[] collection) {
 		if (collection != null) {
-			insertionSort(collection);
+			bubbleSort(collection);
 		} else {
 			throw new IllegalArgumentException("Input paramenter for array to sort is null.");
 		}
 	} 
 	
-	
 	/**
-	 * Insertion sort is a sorting algorithm that builds the final sorted array (or list) one item at a time. 
-	 * The algorithm iterates over the list and removes the current element, finds the location within the 
-	 * sorted part of the list, and inserts it there.  This process is repeated until the whole list is 
-	 * sorted.
+	 * The Bubble Sort algorithm repeatedly steps through the list and compare each adjacent item. The pair 
+	 * of values gets swapped if they are in the wrong order.
 	 */
-	private void insertionSort(int[] collection) {
-		int arrayLength = collection.length;
-		
-		for (int i=1; i < arrayLength; ++i) {
-			int keyValue = collection[i];
-			int iterator = i-1;
-	 
-			while (iterator>=0 && collection[iterator] > keyValue) {
-				collection[iterator+1] = collection[iterator];
-				iterator = iterator-1;
-			}
-			collection[iterator+1] = keyValue;
-		}
+	private void bubbleSort(int[] collection) {
+        int n = collection.length;
+        for (int i = 0; i < n-1; i++) {
+            for (int j = 0; j < n-i-1; j++) {
+                if (collection[j] > collection[j+1]) {
+                		swap(collection, j, j+1);
+                }
+            }
+        }
 	}
-	
-	
+        
+        
+    	/**
+    	 * The method swaps two values around within an array based on the two input parameters x and y.
+    	 */
+    	private void swap(int[] collection, int x, int y) {
+    		int temp = collection[x];
+    		collection[x] = collection[y];
+    		collection[y] = temp;
+    	}
+
+    	
 }

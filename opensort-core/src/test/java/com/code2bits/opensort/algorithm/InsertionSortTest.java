@@ -32,67 +32,66 @@ import com.code2bits.opensort.utils.ArrayUtils;
 
 
 /**
- * The SelectionSortTest class forms part of the Test Driven Development approach to test the SelectionSort 
- * class.
+ * The InsertionSortTest class forms part of the Test Driven Development approach to test the 
+ * InsertionSortAlgorithm class.
  * 
  * @author	André Maré
  */
-public class SelectionSortAlgorithmTest {
+public class InsertionSortTest {
 	
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testSelectionSortNull() {
+	public void testInsertionSortRecursiveNull() {
 		int[] unsortedArray = null;
-		new SelectionSortAlgorithm().sort(unsortedArray);
+		new InsertionSort().sort(unsortedArray);
 	} 
 
 	
 	@Test
-	public void testSelectionSortSizeOne() {
+	public void testInsertionSortSizeOne() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(1);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testSelectionSortSizeTen() {
+	public void testInsertionSortSizeTen() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(10);
 		assertSortedArray(unsortedArray);
 	} 
 
 	
 	@Test
-	public void testSelectionSortSizeTwenty() {
+	public void testInsertionSortSizeTwenty() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(20);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testSelectionSortSizeFifty() {
+	public void testInsertionSortSizeFifty() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(50);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testSelectionSortSizeHundred() {
+	public void testInsertionSortSizeHundred() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(100);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testSelectionSortSizeThousand() {
+	public void testInsertionSortSizeThousand() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(1000);
 		assertSortedArray(unsortedArray);
 	} 
 
 
 	private void assertSortedArray(int[] unsortedArray) {			
-		new SelectionSortAlgorithm().sort(unsortedArray);
+		new InsertionSort().sort(unsortedArray);
 		assertEquals("Array is Sorted.", true, ArrayUtils.isSorted(unsortedArray));
-	}  
-	
+	} 
 	
 }

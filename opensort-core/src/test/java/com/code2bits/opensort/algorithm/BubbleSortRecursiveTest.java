@@ -32,65 +32,65 @@ import com.code2bits.opensort.utils.ArrayUtils;
 
 
 /**
- * The BubbleSortAlgorithmTest class forms part of the Test Driven Development approach to test the 
- * BubbleSortAlgorithm class.
+ * The BubbleSortRecursiveTest class forms part of the Test Driven Development approach to test the 
+ * BubbleSortRecursiveAlgorithm class.
  * 
  * @author	André Maré
  */
-public class BubbleSortAlgorithmTest { 
+public class BubbleSortRecursiveTest {
 	
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testBubbleSortNull() {
+	public void testBubbleSortRecursiveNull() {
 		int[] unsortedArray = null;
-		new BubbleSortAlgorithm().sort(unsortedArray);
+		new BubbleSortRecursive().sort(unsortedArray);
 	} 
 
 	
 	@Test
-	public void testBubbleSortSizeOne() {
+	public void testBubbleSortRecursiveSizeOne() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(1);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testBubbleSortSizeTen() {
+	public void testBubbleSortRecursiveSizeTen() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(10);
 		assertSortedArray(unsortedArray);
 	} 
 
 	
 	@Test
-	public void testBubbleSortSizeTwenty() {
+	public void testBubbleSortRecursiveSizeTwenty() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(20);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testBubbleSortSizeFifty() {
+	public void testBubbleSortRecursiveSizeFifty() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(50);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testBubbleSortSizeHundred() {
+	public void testBubbleSortRecursiveSizeHundred() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(100);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testBubbleSortSizeThousand() {
+	public void testBubbleSortRecursiveSizeThousand() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(1000);
 		assertSortedArray(unsortedArray);
 	} 
 
 
 	private void assertSortedArray(int[] unsortedArray) {			
-		new BubbleSortAlgorithm().sort(unsortedArray);
+		new BubbleSortRecursive().sort(unsortedArray);
 		assertEquals("Array is Sorted.", true, ArrayUtils.isSorted(unsortedArray));
 	} 
 	

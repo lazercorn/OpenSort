@@ -32,66 +32,67 @@ import com.code2bits.opensort.utils.ArrayUtils;
 
 
 /**
- * The QuickSortAlgorithmTest class forms part of the Test Driven Development approach to test the 
- * QuickSortAlgorithm class.
+ * The BubbleSortTest class forms part of the Test Driven Development approach to test the 
+ * BubbleSortAlgorithm class.
  * 
  * @author	André Maré
  */
-public class QuickSortAlgorithmTest {
+public class BubbleSortTest { 
 	
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testQuickSortNull() {
+	public void testBubbleSortNull() {
 		int[] unsortedArray = null;
-		new QuickSortAlgorithm().sort(unsortedArray);
+		new BubbleSort().sort(unsortedArray);
 	} 
 
 	
 	@Test
-	public void testQuickSortSizeOne() {
+	public void testBubbleSortSizeOne() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(1);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testQuickSortSizeTen() {
+	public void testBubbleSortSizeTen() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(10);
 		assertSortedArray(unsortedArray);
 	} 
 
 	
 	@Test
-	public void testQuickSortSizeTwenty() {
+	public void testBubbleSortSizeTwenty() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(20);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testQuickSortSizeFifty() {
+	public void testBubbleSortSizeFifty() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(50);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testQuickSortSizeHundred() {
+	public void testBubbleSortSizeHundred() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(100);
 		assertSortedArray(unsortedArray);
 	} 
 	
 	
 	@Test
-	public void testQuickSortSizeThousand() {
+	public void testBubbleSortSizeThousand() {
 		int[] unsortedArray = ArrayUtils.generateArraySize(1000);
 		assertSortedArray(unsortedArray);
 	} 
 
 
 	private void assertSortedArray(int[] unsortedArray) {			
-		new QuickSortAlgorithm().sort(unsortedArray);
+		new BubbleSort().sort(unsortedArray);
 		assertEquals("Array is Sorted.", true, ArrayUtils.isSorted(unsortedArray));
-	}  
+	} 
+	
 	
 }
