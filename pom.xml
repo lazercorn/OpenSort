@@ -19,7 +19,6 @@
 
   <modules>
     <module>opensort-core</module>
-    <module>opensort-example</module>
   </modules>
 
   <scm>
