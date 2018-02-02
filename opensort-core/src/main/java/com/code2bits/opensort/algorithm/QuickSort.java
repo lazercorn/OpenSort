@@ -41,13 +41,6 @@ import com.code2bits.opensort.Sort;
  * @author	André Maré
  */
 public final class QuickSort implements Sort {
-
-	
-	/**
-	 * The no-arg constructor used to instantiate the class.
-	 */
-	public QuickSort() {
-	} 
 	
 	
 	/**

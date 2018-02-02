@@ -38,14 +38,7 @@ import com.code2bits.opensort.Sort;
  */
 public final class BubbleSort implements Sort {
 
-	
-	/**
-	 * The no-arg constructor used to instantiate the class.
-	 */
-	public BubbleSort() {
-	} 
-	
-	
+		
 	/**
 	 * The sort method is invoked by external classes to sort an array of integers by making use of the 
 	 * BubbleSort algorithm.

@@ -40,14 +40,7 @@ import com.code2bits.opensort.Sort;
  */
 public final class BubbleSortRecursive implements Sort {
 
-	
-	/**
-	 * The no-arg constructor used to instantiate the class.
-	 */
-	public BubbleSortRecursive() {
-	} 
-	
-	
+		
 	/**
 	 * The sort method is invoked by external classes to sort an array of integers by making use of the 
 	 * BubbleSort algorithm.

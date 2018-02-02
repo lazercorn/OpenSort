@@ -39,13 +39,6 @@ import com.code2bits.opensort.Sort;
  * @author	André Maré
  */
 public final class InsertionSortRecursive implements Sort {
-
-	
-	/**
-	 * The no-arg constructor used to instantiate the class.
-	 */
-	public InsertionSortRecursive() {
-	} 
 	
 	
 	/**
