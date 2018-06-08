@@ -24,8 +24,10 @@
 package com.code2bits.opensort.algorithm;
 
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertThat;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.code2bits.opensort.utils.ArrayUtils;
@@ -40,6 +42,14 @@ import com.code2bits.opensort.utils.ArrayUtils;
 public class QuickSortTest {
 	
 	
+	private int[] arrayOfInts = null;
+	
+	@Before
+	public void initialise() {
+		arrayOfInts = ArrayUtils.generateArraySize(100);		
+	}
+	
+	
 	@Test(expected = IllegalArgumentException.class)
 	public void testQuickSortNull() {
 		int[] unsortedArray = null;
@@ -47,51 +57,14 @@ public class QuickSortTest {
 	} 
 
 	
-	@Test
-	public void testQuickSortSizeOne() {
-		int[] unsortedArray = ArrayUtils.generateArraySize(1);
-		assertSortedArray(unsortedArray);
-	} 
-	
-	
-	@Test
-	public void testQuickSortSizeTen() {
-		int[] unsortedArray = ArrayUtils.generateArraySize(10);
-		assertSortedArray(unsortedArray);
-	} 
-
-	
-	@Test
-	public void testQuickSortSizeTwenty() {
-		int[] unsortedArray = ArrayUtils.generateArraySize(20);
-		assertSortedArray(unsortedArray);
-	} 
-	
-	
-	@Test
-	public void testQuickSortSizeFifty() {
-		int[] unsortedArray = ArrayUtils.generateArraySize(50);
-		assertSortedArray(unsortedArray);
-	} 
 	
 	
 	@Test
 	public void testQuickSortSizeHundred() {
-		int[] unsortedArray = ArrayUtils.generateArraySize(100);
-		assertSortedArray(unsortedArray);
-	} 
-	
-	
-	@Test
-	public void testQuickSortSizeThousand() {
-		int[] unsortedArray = ArrayUtils.generateArraySize(1000);
-		assertSortedArray(unsortedArray);
-	} 
+		new QuickSort().sort(arrayOfInts);
+		
+		assertThat(ArrayUtils.isSorted(arrayOfInts), equalTo(true));
 
-
-	private void assertSortedArray(int[] unsortedArray) {			
-		new QuickSort().sort(unsortedArray);
-		assertEquals("Array is Sorted.", true, ArrayUtils.isSorted(unsortedArray));
-	}  
+	} 
 	
 }
